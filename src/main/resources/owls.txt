@@ -1,0 +1,4 @@
+Bács-Kiskun=1000
+Baranya=1050
+Békés=980
+Borsod-Abaúj-Zemplén=600
