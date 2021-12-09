@@ -9,7 +9,7 @@ public class Aquarium {
     private List<Fish> fishes = new ArrayList<>();
 
     public void addFish(Fish fish) {
-        if (fishes.size() == 4) {
+        if (fishes.size() == CAPACITY / 5) {
             throw new IllegalStateException("Can not add fish because there is no more space.");
         } else {
             fishes.add(fish);

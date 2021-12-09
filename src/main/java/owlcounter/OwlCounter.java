@@ -8,7 +8,7 @@ import java.util.List;
 
 public class OwlCounter {
 
-    List<String> owls = new ArrayList<>();
+    private List<String> owls = new ArrayList<>();
 
     public void readFromFile(Path path) {
         try {
@@ -27,7 +27,7 @@ public class OwlCounter {
         return result;
     }
 
-    public int getNumberOfOwls (String county) {
+    public int getNumberOfOwls(String county) {
         OwlsOfHungary owlsOfHungary = buildOwlsOfHungary();
         return checkCounty(county, owlsOfHungary).getNumberOfOwlsInCounty();
     }

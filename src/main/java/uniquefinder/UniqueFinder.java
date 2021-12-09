@@ -5,9 +5,9 @@ import java.util.List;
 
 public class UniqueFinder {
 
-    public List<Character> getUniqueChars (String input) {
+    public List<Character> getUniqueChars(String input) {
         try {
-        return getCharacterList(input);
+            return getCharacterList(input);
 
         } catch (NullPointerException npe) {
             throw new IllegalArgumentException("Text is null.", npe);
