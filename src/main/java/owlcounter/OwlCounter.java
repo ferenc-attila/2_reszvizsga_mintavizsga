@@ -21,7 +21,7 @@ public class OwlCounter {
     public int getNumberOfAllOwls() {
         OwlsOfHungary owlsOfHungary = buildOwlsOfHungary();
         int result = 0;
-        for (OwlsPerCounty countyData : owlsOfHungary.getOwlsOfHungary()) {
+        for (OwlsPerCounty countyData : owlsOfHungary.getOwlsPerCounties()) {
             result += countyData.getNumberOfOwlsInCounty();
         }
         return result;
@@ -56,7 +56,7 @@ public class OwlCounter {
 
     private OwlsPerCounty findOwlsPerCounty(String county, OwlsOfHungary owlsOfHungary) {
         OwlsPerCounty actual = null;
-        for (OwlsPerCounty countyData : owlsOfHungary.getOwlsOfHungary()) {
+        for (OwlsPerCounty countyData : owlsOfHungary.getOwlsPerCounties()) {
             if (county.equals(countyData.getCountyName())) {
                 actual = countyData;
             }

@@ -5,13 +5,13 @@ import java.util.List;
 
 public class OwlsOfHungary {
 
-    private List<OwlsPerCounty> owlsOfHungary = new ArrayList<>();
+    private List<OwlsPerCounty> owlsPerCounties = new ArrayList<>();
 
     public void addCountyData(OwlsPerCounty countyData) {
-        owlsOfHungary.add(countyData);
+        owlsPerCounties.add(countyData);
     }
 
-    public List<OwlsPerCounty> getOwlsOfHungary() {
-        return new ArrayList<>(owlsOfHungary);
+    public List<OwlsPerCounty> getOwlsPerCounties() {
+        return new ArrayList<>(owlsPerCounties);
     }
 }
