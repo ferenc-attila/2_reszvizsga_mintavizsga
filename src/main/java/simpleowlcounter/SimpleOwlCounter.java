@@ -3,7 +3,6 @@ package simpleowlcounter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleOwlCounter {
@@ -19,30 +18,24 @@ public class SimpleOwlCounter {
     }
 
     public int getNumberOfOwls(String county) {
-        List<Integer> filtered = new ArrayList<>();
         for (String actual : numberOfOwls) {
-            String[] data = actual.split("=");
-            if (data[0].equals(county)) {
-                filtered.add(Integer.parseInt(data[1]));
+            if (actual.startsWith(county)) {
+                return getValue(actual);
             }
         }
-        return checkResult(filtered);
+        throw new IllegalArgumentException("No such county in Hungary!");
     }
 
     public int getNumberOfAllOwls() {
         int result = 0;
         for (String actual : numberOfOwls) {
-            String[] data = actual.split("=");
-            result += Integer.parseInt(data[1]);
+            result += getValue(actual);
         }
         return result;
     }
 
-    private int checkResult(List<Integer> filtered) {
-        if (!filtered.isEmpty()) {
-            return filtered.get(0);
-        } else {
-            throw new IllegalArgumentException("No such county in Hungary!");
-        }
+    private int getValue(String actual) {
+        String[] data = actual.split("=");
+        return Integer.parseInt(data[1]);
     }
 }
